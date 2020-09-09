@@ -31,7 +31,7 @@ assert <- function(...,
                    on_fail=base::stop) {
   q = rlang::quos(...)
   errs = as.character(lapply(q, function(expr) {
-    res = tryCatch(suppressWarnings(rlang::eval_tidy(expr)),
+    res = tryCatch(suppressWarnings(rlang::eval_tidy(expr)==TRUE),
              error=function(e) e$message)
   }))
   r = sapply(errs, function(x) x != TRUE)
@@ -55,5 +55,3 @@ assert <- function(...,
     }
   }
 }
-
-assert(1 > 2)
