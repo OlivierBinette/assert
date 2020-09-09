@@ -31,3 +31,12 @@ sum(1, c(1,2))
 #	  length(a) == length(b)	(FALSE) 
 
 ```
+
+## Installation
+
+Install from github:
+
+```r
+if (!require(devtools)) install.packages("devtools")
+devtools::install_github("OlivierBinette/assert")
+```
