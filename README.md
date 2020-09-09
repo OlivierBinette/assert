@@ -1,2 +1,3 @@
 # assert
-Validate function arguments in R
+
+*Validate function arguments in R.*
