@@ -9,8 +9,7 @@
 #' @param on_fail Function to use to stop excution. Should be set to base::stop or
 #'   base::warning
 #'
-#' @return
-#   Nothing if all assertions pass. Otherwise throws an error describing which
+#' @return Nothing if all assertions pass. Otherwise throws an error describing which
 #   assertions failed.
 #'
 #' @examples
@@ -30,7 +29,6 @@
 assert <- function(...,
                    msg="",
                    on_fail=base::stop) {
-
   q = rlang::quos(...)
   errs = lapply(q, function(expr) {
     tryCatch(suppressWarnings(rlang::eval_tidy(expr)),

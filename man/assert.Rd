@@ -16,7 +16,7 @@ assertions failed.}
 base::warning}
 }
 \value{
-
+Nothing if all assertions pass. Otherwise throws an error describing which
 }
 \description{
 Assert that each of the provided expression is true. Otherwise stop execution and

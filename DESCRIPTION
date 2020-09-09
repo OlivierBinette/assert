@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "olivier.binette@gmail.com")
 Description: Boolean assertions with informative error messages. Use within functions to validate arguments.
-import: rlang
+Imports: rlang
 URL: https://github.com/OlivierBinette/assert
 BugReports: https://github.com/OlivierBinette/assert/issues
 License: MIT + file LICENSE
