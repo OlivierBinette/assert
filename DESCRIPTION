@@ -1,0 +1,17 @@
+Package: assert
+Title: Validate function arguments
+Version: 0.0.0.1
+Authors@R: 
+    person(given = "Olivier",
+           family = "Binette",
+           role = c("aut", "cre"),
+           email = "olivier.binette@gmail.com")
+Description: Boolean assertions with informative error messages. Use within functions to validate arguments.
+import: rlang
+URL: https://github.com/OlivierBinette/assert
+BugReports: https://github.com/OlivierBinette/assert/issues
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
