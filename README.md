@@ -11,7 +11,7 @@ assert(is.numeric(a))
 #	  is.numeric(a)	(object 'a' not found)
 ```
 
-The simple `assert` function is most useful when validating function arguments: error messages contain the function call with named arguments. The failed checks expressions are also printed together with the reason for the error.
+The `assert` function is most useful when validating function arguments: error messages contain the function call with named arguments. The failed checks expressions are also printed together with the reason for the error.
 
 ```r
 sum <- function(a, b) {
