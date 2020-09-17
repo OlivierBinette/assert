@@ -1,6 +1,7 @@
 # :eyes: assert
 
 [![Build Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
+![Lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 
 **assert** provides a replacement to `stopifnot` and `assertthat::assert_that` which provides more informative error traces. 
 
