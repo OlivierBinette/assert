@@ -10,7 +10,7 @@
 .synctex.gz
 
 # R project
-.Rproj
+*.Rproj
 
 # History files
 .Rhistory

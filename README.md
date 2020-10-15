@@ -71,9 +71,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>           [,1]      [,2]      [,3]
-#> [1,]  0.111465 -1.193094 0.4347379
-#> [2,] 10.037030  8.237249 8.2379180
+#>            [,1]     [,2]     [,3]
+#> [1,] -0.6663112 1.509960 1.493456
+#> [2,]  6.7381653 8.862956 8.907595
 ```
 
 ``` r
@@ -85,3 +85,12 @@ rmultinorm(mu, 3, sigma)
 #>
 #> Number of samples `k` should be a positive integer 
 ```
+
+## Philosophy
+
+Function argument checks should throw errors as early as possible and at
+the *function* level. When `assert` is used within a function, all
+assertions are executed within `tryCatch` statements, error messages are
+recovered, and a single error is thrown from the enclosing function.
+This ensures that “object not found” errors and assertion execution
+errors are also caught as part of argument checks.

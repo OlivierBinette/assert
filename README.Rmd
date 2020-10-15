@@ -91,3 +91,8 @@ rmultinorm(mu, 3, sigma)
 #> Number of samples `k` should be a positive integer 
 ```
 
+## Philosophy 
+
+Function argument checks should throw errors as early as possible and at the *function* level. When `assert` is used within a function, all assertions are executed within `tryCatch` statements, error messages are recovered, and a single error is thrown from the enclosing function. This ensures that "object not found" errors and assertion execution errors are also caught as part of argument checks.
+
+
