@@ -1,17 +1,20 @@
 Package: assert
-Title: Validate function arguments
-Version: 0.0.0.1
+Title: Validate Function Arguments
+Version: 1.0.0
 Authors@R: 
     person(given = "Olivier",
            family = "Binette",
-           role = c("aut", "cre"),
+           role = c("aut", "cre", "cph"),
            email = "olivier.binette@gmail.com")
-Description: Boolean assertions with informative error messages. Use within functions to validate arguments.
+Description: Lightweight validation tool for checking function arguments and 
+  validating data analysis scripts. This is an alternative to stopifnot() from 
+  the 'base' package  and to assert_that() from the 'assertthat' package. It 
+  provides more informative error messages and facilitates debugging.
 Imports: rlang
 URL: https://github.com/OlivierBinette/assert
 BugReports: https://github.com/OlivierBinette/assert/issues
-License: MIT + file LICENSE
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

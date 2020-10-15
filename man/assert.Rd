@@ -2,18 +2,16 @@
 % Please edit documentation in R/assert.R
 \name{assert}
 \alias{assert}
-\title{Validate function arguments}
+\title{Assertions and Argument Validation}
 \usage{
-assert(..., msg = "", on_fail = base::stop)
+assert(..., msg = "", stop = TRUE)
 }
 \arguments{
-\item{...}{List of logical assertions}
+\item{...}{List of logical assertions.}
 
-\item{msg}{Nothing if all assertions pass. Otherwise throws an error describing which
-assertions failed.}
+\item{msg}{Message to print alongside the list of failed assertions (if any).}
 
-\item{on_fail}{Function to use to stop excution. Should be set to base::stop or
-base::warning}
+\item{stop}{Whether execution should be stopped on failed assertions. If set to FALSE, then only a warning is issued. Default is TRUE.}
 }
 \value{
 Nothing if all assertions pass. Otherwise throws an error describing which
@@ -23,16 +21,34 @@ Assert that each of the provided expression is true. Otherwise stop execution an
 return a description of each failed assertion.
 }
 \examples{
-\dontrun{
-assert(2 < 1, 1 == 1, "1" == 2)
 
+attach(ChickWeight)
+
+# Passing assertions
+assert(is.numeric(weight),
+       all(weight > 0))
+
+# Failing assertions
+if (interactive()) {
+  assert(all(Diet > 0),
+         is.numeric(Times))
+}
+
+# Validating function arguments
 sum <- function(a, b) {
   assert(is.numeric(a),
          is.numeric(b),
          length(a) == length(b))
+
   return(a+b)
 }
-sum("1", 2)
+
+sum(2, 2)
+
+if (interactive()) {
+  sum("1", 2)
+  sum(1, c(1,2))
+  sum(1, x)
 }
 
 }
