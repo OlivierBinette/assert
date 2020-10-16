@@ -10,8 +10,7 @@ Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://
 <!-- badges: end -->
 
 **assert** provides a replacement to `stopifnot` and
-`assertthat::assert_that` which provides more informative error
-messages.
+`assertthat::assert_that` for more informative error messages.
 
 <img src="gif.gif" width="700">
 
@@ -78,9 +77,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>            [,1]      [,2]      [,3]
-#> [1,] -0.1748637  2.165484 -1.807786
-#> [2,] 11.4157834 11.164126 12.441915
+#>           [,1]       [,2]      [,3]
+#> [1,]  2.978921 -0.9152669  1.658154
+#> [2,] 10.502882  9.9774629 11.712643
 ```
 
 ``` r

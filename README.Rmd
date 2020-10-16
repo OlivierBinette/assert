@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-**assert** provides a replacement to `stopifnot` and `assertthat::assert_that` which provides more informative error messages. 
+**assert** provides a replacement to `stopifnot` and `assertthat::assert_that` for more informative error messages. 
 
 <img src="gif.gif" width="700">
 
