@@ -39,6 +39,7 @@ You can install the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("OlivierBinette/assert")
 ```
+
 ## Examples
 
 Assertions throughout a data analysis workflow:

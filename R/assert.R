@@ -45,18 +45,13 @@
 assert <- function(...,
                    msg="",
                    stop=TRUE) {
-  if (stop) {
-    on_fail = base::stop
-  } else {
-    on_fail = base::warning
-  }
 
-  q <- rlang::quos(...)
-  errs <- as.character(lapply(q, function(expr) {
-    res <- tryCatch(suppressWarnings(rlang::eval_tidy(expr)==TRUE),
-             error=function(e) e$message)
-  }))
-  r <- sapply(errs, function(x) x != TRUE)
+  n = ...length()
+  errs <- character(n)
+  for (i in seq_len(n)) {
+    errs[i] <- tryCatch(...elt(i), error=function(e) e$message)
+  }
+  r <- errs != TRUE
 
   if (any(r)) {
     fails <- paste0(substitute(c(...)))[-1][r]
@@ -67,13 +62,15 @@ assert <- function(...,
                      "\n\t"),
               "\n", msg)
     if(identical(parent.frame(), globalenv())) {
-      on_fail(c("\n",msg))
+      if (stop) stop(c("\n", msg), call. = FALSE)
+      else warning(c("\n", msg), call. = FALSE)
     } else {
       msg <- c("in ",
               eval(quote(match.call()), parent.frame()),
               "\n",
               msg)
-      on_fail(msg, call. = FALSE)
+      if (stop) stop(msg, call. = FALSE)
+      else warning(msg, call. = FALSE)
     }
   }
 }

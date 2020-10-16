@@ -16,5 +16,6 @@ BugReports: https://github.com/OlivierBinette/assert/issues
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
+ByteCompile: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
