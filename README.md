@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Build
+Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
 <!-- badges: end -->
 
 **assert** provides a replacement to `stopifnot` and
@@ -76,9 +78,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>          [,1]      [,2]       [,3]
-#> [1,] -3.12223 -2.968136 -0.7454378
-#> [2,] 11.36894  8.886330 11.1584036
+#>            [,1]      [,2]      [,3]
+#> [1,] -0.1748637  2.165484 -1.807786
+#> [2,] 11.4157834 11.164126 12.441915
 ```
 
 ``` r
