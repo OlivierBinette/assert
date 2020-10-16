@@ -9,11 +9,10 @@
 Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
 <!-- badges: end -->
 
-Lightweight validation tool for checking function arguments and
-validating data analysis scripts. This is an alternative to stopifnot()
-from the ‘base’ package and to assert\_that() from the ‘assertthat’
-package. It provides more informative error messages and facilitates
-debugging.
+Lightweight validation tool for checking function arguments and data
+analysis scripts. This is an alternative to stopifnot() from the ‘base’
+package and to assert\_that() from the ‘assertthat’ package. It provides
+more informative error messages and facilitates debugging.
 
 <img src="gif.gif" width="700">
 
@@ -80,9 +79,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>            [,1]       [,2]      [,3]
-#> [1,]  0.4808711  0.9669858 -1.992308
-#> [2,] 11.8692937 11.9884896 10.398498
+#>           [,1]      [,2]       [,3]
+#> [1,] -1.016504  1.484134 -0.9263617
+#> [2,] 10.444456 10.011926 11.1353322
 ```
 
 ``` r
@@ -122,7 +121,7 @@ bench::mark(assert(TRUE),
 #> # A tibble: 3 x 6
 #>   expression             min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>        <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 assert(TRUE)        9.71µs  11.34µs    63171.        0B     37.9
-#> 2 assert_that(TRUE)  17.71µs  21.17µs    24480.    26.9KB     34.3
-#> 3 stopifnot(TRUE)     1.73µs   2.31µs   319826.        0B     64.0
+#> 1 assert(TRUE)       10.29µs  11.95µs    59736.        0B     35.9
+#> 2 assert_that(TRUE)   18.3µs  21.07µs    30661.    26.9KB     43.0
+#> 3 stopifnot(TRUE)     1.76µs   2.47µs   208986.        0B     41.8
 ```

@@ -21,10 +21,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-Lightweight validation tool for checking function arguments and 
-  validating data analysis scripts. This is an alternative to stopifnot() from 
-  the 'base' package  and to assert_that() from the 'assertthat' package. It 
-  provides more informative error messages and facilitates debugging.
+Lightweight validation tool for checking function arguments and data analysis scripts. This is an alternative to stopifnot() from the 'base' package  and to assert_that() from the 'assertthat' package. It provides more informative error messages and facilitates debugging.
   
 <img src="gif.gif" width="700">
 
