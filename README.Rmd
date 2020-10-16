@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-**assert** provides a replacement to `stopifnot` and `assertthat::assert_that` for more informative error messages. 
+**assert** is a lightweight and efficient replacement to `stopifnot` and `assertthat::assert_that` which provides more informative error messages. 
 
 <img src="gif.gif" width="700">
 
@@ -100,8 +100,21 @@ rmultinorm(mu, 3, sigma)
 #> Number of samples `k` should be a positive integer 
 ```
 
+
 ## Philosophy 
 
 Function argument checks should throw errors as early as possible and at the *function* level. When `assert` is used within a function, all assertions are executed within `tryCatch` statements, error messages are recovered, and a single error is thrown from the enclosing function. This ensures that "object not found" errors and assertion execution errors are also caught as part of argument checks.
 
+## Performance
+
+Because `assert` executes each assertion inside of a tryCatch() statement and recovers error messages, it is not quite as performant as `stopifnot` (which sequentially executes assertions without catching potential errors). `assertthat::assert_that` has the most overhead.
+
+```{r}
+library(assertthat)
+
+bench::mark(assert(TRUE),
+            assert_that(TRUE),
+            stopifnot(TRUE),
+            check=FALSE)
+```
 

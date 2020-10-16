@@ -9,8 +9,9 @@
 Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
 <!-- badges: end -->
 
-**assert** provides a replacement to `stopifnot` and
-`assertthat::assert_that` for more informative error messages.
+**assert** is a lightweight and efficient replacement to `stopifnot` and
+`assertthat::assert_that` which provides more informative error
+messages.
 
 <img src="gif.gif" width="700">
 
@@ -77,9 +78,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>           [,1]       [,2]      [,3]
-#> [1,]  2.978921 -0.9152669  1.658154
-#> [2,] 10.502882  9.9774629 11.712643
+#>           [,1]       [,2]       [,3]
+#> [1,] 0.2970248  0.5438736 -0.5126764
+#> [2,] 9.6651747 11.2779261 11.6395655
 ```
 
 ``` r
@@ -100,3 +101,25 @@ assertions are executed within `tryCatch` statements, error messages are
 recovered, and a single error is thrown from the enclosing function.
 This ensures that “object not found” errors and assertion execution
 errors are also caught as part of argument checks.
+
+## Performance
+
+Because `assert` executes each assertion inside of a tryCatch()
+statement and recovers error messages, it is not quite as performant as
+`stopifnot` (which sequentially executes assertions without catching
+potential errors). `assertthat::assert_that` has the most overhead.
+
+``` r
+library(assertthat)
+
+bench::mark(assert(TRUE),
+            assert_that(TRUE),
+            stopifnot(TRUE),
+            check=FALSE)
+#> # A tibble: 3 x 6
+#>   expression             min   median `itr/sec` mem_alloc `gc/sec`
+#>   <bch:expr>        <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
+#> 1 assert(TRUE)       10.44µs  12.17µs    51878.        0B     31.1
+#> 2 assert_that(TRUE)  18.84µs  23.25µs    26554.    26.9KB     37.2
+#> 3 stopifnot(TRUE)     1.95µs   4.05µs   151285.        0B     30.3
+```
