@@ -1,6 +1,6 @@
 Package: assert
 Title: Validate Function Arguments
-Version: 1.0.0
+Version: 1.0.1.0000
 Authors@R: 
     person(given = "Olivier",
            family = "Binette",
