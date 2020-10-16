@@ -20,15 +20,20 @@ knitr::opts_chunk$set(
 
 **assert** provides a replacement to `stopifnot` and `assertthat::assert_that` which provides more informative error messages. 
 
+![example](gif.gif)
+
 ## Installation
 
-You can install the released version of assert from [CRAN](https://CRAN.R-project.org) with:
+<!--You can install the released version of assert from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("assert")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
+-->
+
+You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")

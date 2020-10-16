@@ -11,16 +11,21 @@
 `assertthat::assert_that` which provides more informative error
 messages.
 
+![example](gif.gif)
+
 ## Installation
 
-You can install the released version of assert from
-[CRAN](https://CRAN.R-project.org) with:
+<!--You can install the released version of assert from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("assert")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
+-->
+
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -71,9 +76,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>            [,1]     [,2]     [,3]
-#> [1,] -0.6663112 1.509960 1.493456
-#> [2,]  6.7381653 8.862956 8.907595
+#>           [,1]      [,2]      [,3]
+#> [1,] -1.359301 -1.442898 -2.913387
+#> [2,]  9.438731  8.270206  6.369998
 ```
 
 ``` r
