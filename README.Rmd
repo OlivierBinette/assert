@@ -21,8 +21,11 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 
-**assert** is a lightweight and efficient replacement to `stopifnot` and `assertthat::assert_that` which provides more informative error messages. 
-
+Lightweight validation tool for checking function arguments and 
+  validating data analysis scripts. This is an alternative to stopifnot() from 
+  the 'base' package  and to assert_that() from the 'assertthat' package. It 
+  provides more informative error messages and facilitates debugging.
+  
 <img src="gif.gif" width="700">
 
 ## Installation
@@ -103,11 +106,11 @@ rmultinorm(mu, 3, sigma)
 
 ## Philosophy 
 
-Function argument checks should throw errors as early as possible and at the *function* level. When `assert` is used within a function, all assertions are executed within `tryCatch` statements, error messages are recovered, and a single error is thrown from the enclosing function. This ensures that "object not found" errors and assertion execution errors are also caught as part of argument checks.
+Function argument checks should throw errors as early as possible and at the *function* level. When `assert` is used within a function, all assertions are executed within `tryCatch` statements, error messages are recovered, and a single error is thrown from `assert`. This ensures that "object not found" errors and assertion execution errors are also caught as part of argument checks. The function signature and call are also included as part of error messages to facilitate debugging.
 
 ## Performance
 
-Because `assert` executes each assertion inside of a tryCatch() statement and recovers error messages, it is not quite as performant as `stopifnot` (which sequentially executes assertions without catching potential errors). `assertthat::assert_that` has the most overhead.
+Because `assert` executes each assertion inside of a tryCatch() statement and recovers error messages, it is not quite as efficient as `stopifnot` (which sequentially executes assertions without catching potential errors). `assertthat::assert_that` has the most overhead.
 
 ```{r}
 library(assertthat)

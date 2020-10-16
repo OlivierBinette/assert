@@ -9,9 +9,11 @@
 Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
 <!-- badges: end -->
 
-**assert** is a lightweight and efficient replacement to `stopifnot` and
-`assertthat::assert_that` which provides more informative error
-messages.
+Lightweight validation tool for checking function arguments and
+validating data analysis scripts. This is an alternative to stopifnot()
+from the ‘base’ package and to assert\_that() from the ‘assertthat’
+package. It provides more informative error messages and facilitates
+debugging.
 
 <img src="gif.gif" width="700">
 
@@ -78,9 +80,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>           [,1]       [,2]       [,3]
-#> [1,] 0.2970248  0.5438736 -0.5126764
-#> [2,] 9.6651747 11.2779261 11.6395655
+#>            [,1]       [,2]      [,3]
+#> [1,]  0.4808711  0.9669858 -1.992308
+#> [2,] 11.8692937 11.9884896 10.398498
 ```
 
 ``` r
@@ -98,14 +100,15 @@ rmultinorm(mu, 3, sigma)
 Function argument checks should throw errors as early as possible and at
 the *function* level. When `assert` is used within a function, all
 assertions are executed within `tryCatch` statements, error messages are
-recovered, and a single error is thrown from the enclosing function.
-This ensures that “object not found” errors and assertion execution
-errors are also caught as part of argument checks.
+recovered, and a single error is thrown from `assert`. This ensures that
+“object not found” errors and assertion execution errors are also caught
+as part of argument checks. The function signature and call are also
+included as part of error messages to facilitate debugging.
 
 ## Performance
 
 Because `assert` executes each assertion inside of a tryCatch()
-statement and recovers error messages, it is not quite as performant as
+statement and recovers error messages, it is not quite as efficient as
 `stopifnot` (which sequentially executes assertions without catching
 potential errors). `assertthat::assert_that` has the most overhead.
 
@@ -119,7 +122,7 @@ bench::mark(assert(TRUE),
 #> # A tibble: 3 x 6
 #>   expression             min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>        <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 assert(TRUE)       10.44µs  12.17µs    51878.        0B     31.1
-#> 2 assert_that(TRUE)  18.84µs  23.25µs    26554.    26.9KB     37.2
-#> 3 stopifnot(TRUE)     1.95µs   4.05µs   151285.        0B     30.3
+#> 1 assert(TRUE)        9.71µs  11.34µs    63171.        0B     37.9
+#> 2 assert_that(TRUE)  17.71µs  21.17µs    24480.    26.9KB     34.3
+#> 3 stopifnot(TRUE)     1.73µs   2.31µs   319826.        0B     64.0
 ```
