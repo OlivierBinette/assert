@@ -11,7 +11,7 @@
 `assertthat::assert_that` which provides more informative error
 messages.
 
-![example](gif.gif)
+<img src="gif.gif" width="600">
 
 ## Installation
 
@@ -76,9 +76,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>           [,1]      [,2]      [,3]
-#> [1,] -1.359301 -1.442898 -2.913387
-#> [2,]  9.438731  8.270206  6.369998
+#>           [,1]      [,2]       [,3]
+#> [1,]  2.137554 -1.553553 -0.5101453
+#> [2,] 11.715366  9.534136 10.5125886
 ```
 
 ``` r

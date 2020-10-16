@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 
 **assert** provides a replacement to `stopifnot` and `assertthat::assert_that` which provides more informative error messages. 
 
-![example](gif.gif)
+<img src="gif.gif" width="600">
 
 ## Installation
 
