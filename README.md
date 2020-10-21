@@ -7,6 +7,7 @@
 
 [![Build
 Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
+![R-CMD-check](https://github.com/OlivierBinette/assert/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
 Lightweight validation tool for checking function arguments and data
@@ -80,8 +81,8 @@ mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
 #>           [,1]      [,2]       [,3]
-#> [1,] -1.016504  1.484134 -0.9263617
-#> [2,] 10.444456 10.011926 11.1353322
+#> [1,]  1.231192 -2.320212 -0.8279906
+#> [2,] 10.834625  7.159887  9.4713858
 ```
 
 ``` r
@@ -121,7 +122,7 @@ bench::mark(assert(TRUE),
 #> # A tibble: 3 x 6
 #>   expression             min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>        <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 assert(TRUE)       10.29µs  11.95µs    59736.        0B     35.9
-#> 2 assert_that(TRUE)   18.3µs  21.07µs    30661.    26.9KB     43.0
-#> 3 stopifnot(TRUE)     1.76µs   2.47µs   208986.        0B     41.8
+#> 1 assert(TRUE)        9.76µs  11.75µs    48818.        0B     29.3
+#> 2 assert_that(TRUE)  17.85µs  21.12µs    24288.    26.9KB     35.1
+#> 3 stopifnot(TRUE)     1.71µs   2.44µs   260028.        0B     52.0
 ```
