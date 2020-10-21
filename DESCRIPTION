@@ -10,7 +10,7 @@ Description: Lightweight validation tool for checking function arguments and
   validating data analysis scripts. This is an alternative to stopifnot() from 
   the 'base' package  and to assert_that() from the 'assertthat' package. It 
   provides more informative error messages and facilitates debugging.
-Imports: rlang
+Imports: 
 URL: https://github.com/OlivierBinette/assert
 BugReports: https://github.com/OlivierBinette/assert/issues
 License: GPL (>= 2)

@@ -4,3 +4,4 @@
 .travis.yml
 ^CRAN-RELEASE$
 cran-comments.md
+gif.gif
