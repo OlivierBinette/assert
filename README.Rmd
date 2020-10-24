@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 # :eyes: assert
 
 <!-- badges: start -->
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/assert)](https://cran.r-project.org/package=assert)
 [![Build Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
 ![R-CMD-check](https://github.com/OlivierBinette/assert/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
@@ -28,16 +29,13 @@ Lightweight validation tool for checking function arguments and data analysis sc
 
 ## Installation
 
-<!--You can install the released version of assert from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of assert from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("assert")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
--->
-
-You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")

@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/assert)](https://cran.r-project.org/package=assert)
 [![Build
 Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
 ![R-CMD-check](https://github.com/OlivierBinette/assert/workflows/R-CMD-check/badge.svg)
@@ -19,17 +20,14 @@ more informative error messages and facilitates debugging.
 
 ## Installation
 
-<!--You can install the released version of assert from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of assert from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("assert")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
--->
-
-You can install the development version from
-[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -80,9 +78,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>           [,1]      [,2]       [,3]
-#> [1,]  1.231192 -2.320212 -0.8279906
-#> [2,] 10.834625  7.159887  9.4713858
+#>            [,1]      [,2]      [,3]
+#> [1,]  0.1636879  3.779179 -1.631468
+#> [2,] 10.7216599 13.251040 10.102402
 ```
 
 ``` r
@@ -122,7 +120,7 @@ bench::mark(assert(TRUE),
 #> # A tibble: 3 x 6
 #>   expression             min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>        <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 assert(TRUE)        9.76µs  11.75µs    48818.        0B     29.3
-#> 2 assert_that(TRUE)  17.85µs  21.12µs    24288.    26.9KB     35.1
-#> 3 stopifnot(TRUE)     1.71µs   2.44µs   260028.        0B     52.0
+#> 1 assert(TRUE)        69.1µs  76.35µs     4505.        0B     15.6
+#> 2 assert_that(TRUE)   18.5µs  20.92µs    27812.    26.9KB     39.0
+#> 3 stopifnot(TRUE)      1.8µs   2.48µs   220063.        0B     44.0
 ```
