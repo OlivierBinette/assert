@@ -78,9 +78,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>            [,1]      [,2]      [,3]
-#> [1,]  0.1636879  3.779179 -1.631468
-#> [2,] 10.7216599 13.251040 10.102402
+#>           [,1]      [,2]       [,3]
+#> [1,] -2.246757 -1.424890 -0.9528532
+#> [2,]  7.941552  9.283195 10.4848747
 ```
 
 ``` r
@@ -120,7 +120,7 @@ bench::mark(assert(TRUE),
 #> # A tibble: 3 x 6
 #>   expression             min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>        <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 assert(TRUE)        69.1µs  76.35µs     4505.        0B     15.6
-#> 2 assert_that(TRUE)   18.5µs  20.92µs    27812.    26.9KB     39.0
-#> 3 stopifnot(TRUE)      1.8µs   2.48µs   220063.        0B     44.0
+#> 1 assert(TRUE)       14.88µs   17.5µs    55463.        0B    55.5 
+#> 2 assert_that(TRUE)  29.05µs     32µs    29553.    26.9KB     8.87
+#> 3 stopifnot(TRUE)     2.72µs      3µs   269977.        0B     0
 ```
