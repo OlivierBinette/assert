@@ -1,6 +1,7 @@
 ^assert\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
+^README\.md$
 .travis.yml
 ^CRAN-RELEASE$
 cran-comments.md
