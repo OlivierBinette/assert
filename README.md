@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# :eyes: assert
+# :white_check_mark: assert
 
 <!-- badges: start -->
 
