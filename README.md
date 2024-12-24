@@ -6,8 +6,6 @@
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/assert)](https://cran.r-project.org/package=assert)
-[![Build
-Status](https://travis-ci.org/OlivierBinette/assert.svg?branch=master)](https://travis-ci.org/OlivierBinette/assert)
 ![R-CMD-check](https://github.com/OlivierBinette/assert/workflows/R-CMD-check/badge.svg)
 <!-- badges: end -->
 
@@ -78,9 +76,9 @@ rmultinorm <- function(k, mu, sigma) {
 mu <- c(0,10)
 sigma <- matrix(c(2,1,1,2), nrow=2)
 rmultinorm(3, mu, sigma)
-#>             [,1]      [,2]     [,3]
-#> [1,] -0.02311083 -1.060765  1.00757
-#> [2,] 12.94321538  9.129731 14.52424
+#>           [,1]      [,2]       [,3]
+#> [1,] -1.843062 -0.765866 -0.1045497
+#> [2,]  8.572254 10.706776 10.4072621
 ```
 
 ``` r
@@ -121,7 +119,7 @@ bench::mark(assert(TRUE),
 #> # A tibble: 3 × 6
 #>   expression             min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>        <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 assert(TRUE)         6.5µs    7.2µs   118811.        0B     23.8
-#> 2 assert_that(TRUE)   12.3µs   13.2µs    70165.    26.9KB     21.1
-#> 3 stopifnot(TRUE)      1.2µs    1.3µs   702484.        0B      0
+#> 1 assert(TRUE)         6.6µs   12.7µs    67699.        0B     13.5
+#> 2 assert_that(TRUE)   12.2µs   20.9µs    45708.    26.9KB     13.7
+#> 3 stopifnot(TRUE)      1.9µs    2.2µs   384789.        0B      0
 ```
