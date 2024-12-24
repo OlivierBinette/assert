@@ -66,7 +66,7 @@ assert <- function(...,
       else warning(c("\n", msg), call. = FALSE)
     } else {
       msg <- c("in ",
-              eval(quote(match.call()), parent.frame()),
+              eval(quote(sys.call()), parent.frame()),
               "\n",
               msg)
       if (stop) stop(msg, call. = FALSE)
